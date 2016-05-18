@@ -4,8 +4,8 @@ describe('Landing page', () => {
   it('should show a welcoming', (browser) => {
     browser
       .url('http://localhost:8080')
-      .waitForElementVisible('body', 1000)
-      .pause(1000)
+      .waitForElementVisible('body', 3000)
+      .pause(2000)
       .assert.containsText('.welcome', 'Welcome to the Sparks.Network')
       .end()
   })

@@ -6,7 +6,7 @@ describe('Landing page', () => {
       .url('http://localhost:8080')
       .waitForElementVisible('body', 3000)
       .pause(2000)
-      .assert.containsText('.welcome', 'Welcome to the Sparks.Network')
+      .assert.containsText('.welcome', 'Cycle.js Diversity XStream Boilerplate')
       .end()
   })
 })

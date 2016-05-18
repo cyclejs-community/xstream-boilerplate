@@ -35,3 +35,4 @@ node_modules
 report
 .tmp
 test-results.xml
+dist/bundle.js

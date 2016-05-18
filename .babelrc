@@ -1,6 +1,12 @@
 {
   "presets": ["es2015", "stage-0"],
   "plugins": [
+    ["cycle-hmr/xstream", {
+      "include": "**/src/**",
+      "proxy": {
+        "debug": "info"
+      }
+    }],
     "espower"
   ]
 }

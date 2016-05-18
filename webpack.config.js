@@ -5,15 +5,21 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const srcPath = path.resolve('./src')
 const imagePath = path.resolve('./dist/images')
 
+console.log(process.env.BUILD_ENV);
+
 const basePlugins =
   [
     new webpack.EnvironmentPlugin([ 'BUILD_ENV' ]),
-    new ExtractTextPlugin('style.css', { allChunks: true })
+    new ExtractTextPlugin('style.css', { allChunks: true }),
+    new webpack.NoErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.IgnorePlugin(/most-adapter/)
   ]
 
 const prodPlugins =
   [
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new ExtractTextPlugin('style.css', { allChunks: true })
   ]
 
 const plugins = process.env.BUILD_ENV === 'production'
@@ -23,6 +29,7 @@ const plugins = process.env.BUILD_ENV === 'production'
 const JSLoader = {
   test: /\.js$/,
   loaders: [
+    'babel',
     'babel-loader',
     'eslint'
   ],
@@ -60,17 +67,27 @@ const ImageLoader = {
 module.exports = {
   plugins,
 
-  entry: [
-    path.join(srcPath, 'app.js')
-  ],
+  devtool: 'eval',
+
+  entry: {
+    app: [
+      path.join(__dirname, 'src/app')
+    ]
+  },
 
   output: {
-    path: path.resolve('./dist'),
     filename: 'bundle.js',
-    publicPath: 'http://localhost:8080/'
+    pathInfo: true,
+    path: path.join(__dirname, './dist/'),
+    publicPath: '/'
   },
 
   devServer: {
+    hot: true,
+    inline: true,
+    stats: {colors: true},
+    port: 3000,
+    host: 'localhost',
     contentBase: path.resolve('./dist'),
     historyApiFallback: true
   },

@@ -1,0 +1,7 @@
+{
+  "extends": "eslint-config-standard",
+  "rules": {
+    "padded-blocks": 0,
+    "brace-style": 0
+  }
+}

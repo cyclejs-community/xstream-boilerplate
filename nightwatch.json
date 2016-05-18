@@ -1,0 +1,54 @@
+{
+  "src_folders" : ["e2e"],
+  "output_folder" : "./report",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "page_objects_path" : "",
+  "globals_path" : "",
+
+  "selenium" : {
+    "start_process" : true,
+    "server_path" : "node_modules/selenium-server/lib/runner/selenium-server-standalone-2.53.0.jar",
+    "log_path" : "",
+    "host" : "127.0.0.1",
+    "port" : 4444,
+    "cli_args" : {
+      "webdriver.chrome.driver" : "./node_modules/.bin/chromedriver",
+      "webdriver.ie.driver" : ""
+    }
+  },
+
+  "test_runner": {
+    "type": "mocha",
+    "options": {
+      "reporter": "mocha-circleci-reporter"
+    }
+  },
+
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://localhost",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "output_folder": "./report",
+      "screenshots" : {
+        "enabled" : true,
+        "path" : "./tests_output"
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+    "circleci": {
+      "output_folder": "${CIRCLE_TEST_REPORTS}",
+      "screenshots": {
+        "enabled": true,
+        "path": "${CIRCLE_ARTIFACTS}",
+        "on_failure": true,
+        "on_error": true
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+machine:
+  node:
+    version: 6.2.0
+
+test:
+  pre:
+    - BUILD_ENV=production npm run build
+    - npm run serve-static:
+        background: true
+    - sleep 3
+  override:
+    - MOCHA_FILE=$CIRCLE_TEST_REPORTS/test-results.xml npm test -- --env circleci
+
+dependencies:
+  post:
+    - curl -L -o google-chrome.deb https://s3.amazonaws.com/circle-downloads/google-chrome-stable_current_amd64_47.0.2526.73-1.deb
+    - sudo dpkg -i google-chrome.deb
+    - sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
+    - rm google-chrome.deb
+
+# When you're ready for this stuff :)
+#deployment:
+#  production:
+#    branch: master
+#    commands:
+#      - BABEL_ENV=production BUILD_ENV=production npm run build
+#      - surge ./dist http://example.com
+#  staging:
+#    branch: release
+#    commands:
+#      - BABEL_ENV=production BUILD_ENV=staging npm run build
+#      - surge ./dist http://example.com

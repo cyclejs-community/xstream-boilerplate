@@ -3,7 +3,7 @@
 ## Get it!
 
 ```bash
-$ git clone https://github.com/TylorS/cyclejs-xstream-boilerplate PROJECT_NAME
+$ git clone https://github.com/TylorS/xstream-boilerplate.git PROJECT_NAME
 $ cd PROJECT_NAME
 $ rm -rf .git
 $ git init

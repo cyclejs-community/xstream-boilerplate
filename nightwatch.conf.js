@@ -6,4 +6,4 @@ module.exports = (function (settings) {
       './node_modules/.bin/chromedriver.cmd'
   }
   return settings
-})(require('./nightwatch.json'))
+})(require('./nightwatch.js'))

@@ -9,7 +9,7 @@ test:
         background: true
     - sleep 3
   override:
-    - MOCHA_FILE=$CIRCLE_TEST_REPORTS/test-results.xml npm test -- --env circleci
+    - MOCHA_FILE=$CIRCLE_TEST_REPORTS/test-results.xml npm test-ci
 
 dependencies:
   post:
@@ -17,6 +17,12 @@ dependencies:
     - sudo dpkg -i google-chrome.deb
     - sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
     - rm google-chrome.deb
+
+general:
+  artifacts:
+    - ./coverage
+    - ./tests_output
+    - ./test-results.xml
 
 # When you're ready for this stuff :)
 #deployment:

@@ -4,7 +4,7 @@ machine:
 
 test:
   pre:
-  - BUILD_ENV=production npm run build
+    - BUILD_ENV=production npm run build
     - npm run serve-static:
         background: true
     - sleep 3

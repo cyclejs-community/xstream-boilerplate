@@ -8,7 +8,7 @@ test:
     - npm run tunnels:
         background: true
   override:
-    - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run test-ci
+    - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run test
 
 general:
   artifacts:

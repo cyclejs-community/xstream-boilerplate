@@ -3,8 +3,13 @@ machine:
     version: 6.2.0
 
 test:
+  pre:
+  - BUILD_ENV=production npm run build
+    - npm run serve-static:
+        background: true
+    - sleep 3
   override:
-    - npm run test
+    - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run test --circleci
 
 general:
   artifacts:

@@ -60,7 +60,7 @@ module.exports = {
       'output_folder': './report',
       'screenshots': {
         'enabled': true,
-        'path': '${CIRCLE_ARTIFACTS}',
+        'path': './screens',
         'on_failure': true,
         'on_error': true
       },
@@ -68,6 +68,13 @@ module.exports = {
         'browserName': 'chrome',
         'javascriptEnabled': true,
         'acceptSslCerts': true
+      }
+    },
+
+    'circleci': {
+      'output_folder': '${CIRCLE_TEST_REPORTS}',
+      'screenshots': {
+        'path': '${CIRCLE_ARTIFACTS}'
       }
     },
 

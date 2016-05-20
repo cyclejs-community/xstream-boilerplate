@@ -37,6 +37,7 @@ report
 test-results.xml
 dist/bundle.js
 tests_output
+screens
 ${CIRCLE_ARTIFACTS}
 .local
 *.local.*

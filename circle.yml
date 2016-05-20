@@ -7,7 +7,7 @@ test:
     - BUILD_ENV=production npm run build
     - npm run tunnels:
         background: true
-    - sleep 5
+    - sleep 15
   override:
     - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run test-ci
 

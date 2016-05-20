@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 const srcPath = path.resolve('./src')
 const imagePath = path.resolve('./dist/images')
@@ -8,7 +9,17 @@ const imagePath = path.resolve('./dist/images')
 const basePlugins =
   [
     new webpack.EnvironmentPlugin([ 'BUILD_ENV' ]),
-    new ExtractTextPlugin('style.css', { allChunks: true })
+    new ExtractTextPlugin('style.css', { allChunks: true }),
+    new BrowserSyncPlugin(
+      {
+        host: 'localhost',
+        port: 3100,
+        proxy: 'http://localhost:8080/'
+      },
+      {
+        reload: false
+      }
+    )
   ]
 
 const prodPlugins =

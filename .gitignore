@@ -36,3 +36,9 @@ report
 .tmp
 test-results.xml
 dist/bundle.js
+tests_output
+${CIRCLE_ARTIFACTS}
+.local
+*.local.*
+CBT_READY
+CBT_KILL

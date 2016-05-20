@@ -1,3 +1,4 @@
+import 'es6-shim' // suppport more browsers
 // External imports
 import Cycle from '@cycle/xstream-run'
 import {makeDOMDriver} from '@cycle/dom'

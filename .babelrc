@@ -1,6 +1,21 @@
 {
   "presets": ["es2015", "stage-0"],
-  "plugins": [
-    "espower"
-  ]
+  "env": {
+
+    "development": {
+      "plugins": [
+        "espower",
+        ["cycle-hmr", {
+          "include": [
+            "./src/component/**/*.js",
+            "./src/page/**/*.js"
+          ]
+        }]
+      ]
+    },
+
+    "production": {
+      "plugins": []
+    }
+  }
 }

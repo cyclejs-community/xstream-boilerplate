@@ -1,3 +1,5 @@
+/* no cycle-hmr */
+/* cycle-hmr does not like the pluck() fn returned from ComponentRouter */
 import dropRepeats from 'xstream/extra/dropRepeats'
 import isolate from '@cycle/isolate'
 import {div} from '@cycle/dom'

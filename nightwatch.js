@@ -6,7 +6,7 @@ const makeCBTTest = OSName => (apiName, browserName) =>
   ({
     'selenium_host': 'hub.crossbrowsertesting.com',
     'selenium_port': '80',
-    'output_folder': '${CIRCLE_TEST_REPORTS}',
+    'output_folder': '${CIRCLE_ARTIFACTS}',
 
     desiredCapabilities: {
       'name': `${OSName}~${apiName}~${browserName}`,
@@ -60,7 +60,7 @@ module.exports = {
       'output_folder': './report',
       'screenshots': {
         'enabled': true,
-        'path': './screens',
+        'path': '${CIRCLE_ARTIFACTS}',
         'on_failure': true,
         'on_error': true
       },

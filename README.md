@@ -34,6 +34,8 @@ $ npm install
 - Github Issue and Pull Request templates
 - [LGTM](https://lgtm.co) sample MAINTAINERS file
 - Webpack - bunding
+- Hot Module Reloading - using [cycle-hmr](https://whitecolor/cycle-hmr) - Thank you @Cmdv and @whitecolor
+- [BrowserSync](https://browsersync.io/) - Make testing mutliple browsers easy peasy! Thank you @stevenmathews
 - CSS Modules - better CSS
 - SASS/SCSS + Modules - betterer CSS
 - Script for making better Github issue labels
@@ -48,7 +50,6 @@ $ npm install
 
 #### TODO
 
-- Hot Module Reloading
 - Update to Webpack 2 for tree-shaking
 - Better Documentation, more links, etc
 - add markdown-doc-test

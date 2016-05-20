@@ -1,5 +1,9 @@
 # Cycle.js Diversity Boilerplate
 [![Coverage Status](https://coveralls.io/repos/github/TylorS/xstream-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/TylorS/xstream-boilerplate?branch=master)
+[![CircleCI](https://img.shields.io/circleci/project/TylorS/xstream-boilerplate.svg?maxAge=2592000)]()
+[![David](https://img.shields.io/david/TylorS/xstream-boilerplate.svg?maxAge=2592000)]()
+[![David](https://img.shields.io/david/dev/TylorS/xstream-boilerplate.svg?maxAge=2592000)]()
+[![Github All Releases](https://img.shields.io/github/downloads/TylorS/xstream-boilerplate/total.svg?maxAge=2592000)]()
 
 ## Get it!
 

@@ -60,6 +60,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
     "babel-register-cli": "^2.0.1",
+    "cbt_tunnels": "0.0.24",
     "chromedriver": "^2.21.2",
     "commitizen": "^2.8.1",
     "conventional-changelog": "^1.1.0",

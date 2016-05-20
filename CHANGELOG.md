@@ -1,9 +1,17 @@
-<a name="0.0.0"></a>
-# 0.0.0 (2016-05-18)
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/TylorS/xstream-boilerplate/compare/b33087e...v0.1.0) (2016-05-20)
+
+
+### Bug Fixes
+
+* **e2e:** circleci fixes ([df31ce9](https://github.com/TylorS/xstream-boilerplate/commit/df31ce9))
+* **e2e:** fix e2e test on circleci ([ddd7c01](https://github.com/TylorS/xstream-boilerplate/commit/ddd7c01))
+* **e2e:** hopefully fix the circleci builds ([b827f74](https://github.com/TylorS/xstream-boilerplate/commit/b827f74))
 
 
 ### Features
 
+* **cbt:** add crossbrowsertesting configurations ([8abf9d2](https://github.com/TylorS/xstream-boilerplate/commit/8abf9d2))
 * **etc:** initial upload ([b33087e](https://github.com/TylorS/xstream-boilerplate/commit/b33087e))
 
 

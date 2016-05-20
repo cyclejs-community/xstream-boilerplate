@@ -2,14 +2,6 @@ machine:
   node:
     version: 6.2.0
 
-test:
-  pre:
-    - BUILD_ENV=production npm run build
-    - npm run tunnels:
-        background: true
-  override:
-    - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run test
-
 general:
   artifacts:
     - ./${CIRCLE_ARTIFACTS}

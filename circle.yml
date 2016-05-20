@@ -9,7 +9,7 @@ test:
         background: true
     - sleep 3
   override:
-    - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run test --circleci
+    - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run lint && npm run coverage && npm run e2e-test -- --env circleci
 
 general:
   artifacts:

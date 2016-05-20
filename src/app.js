@@ -18,11 +18,4 @@ const drivers =
     router: makeRouterDriver(...history)
   }
 
-const dispose = Cycle.run(main, drivers)
-
-if (module.hot) {
-  module.hot.accept()
-  module.hot.dispose(() => {
-    dispose()
-  })
-}
+Cycle.run(main, drivers)

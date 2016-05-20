@@ -9,7 +9,9 @@ const imagePath = path.resolve('./dist/images')
 const basePlugins =
   [
     new webpack.EnvironmentPlugin([ 'BUILD_ENV' ]),
-    new ExtractTextPlugin('style.css', { allChunks: true }),
+    new webpack.NoErrorsPlugin(), // use it
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('styles.css', { allChunks: true }),
     new BrowserSyncPlugin(
       {
         host: 'localhost',
@@ -72,6 +74,8 @@ module.exports = {
   plugins,
 
   entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
     path.join(srcPath, 'app.js')
   ],
 
@@ -82,6 +86,9 @@ module.exports = {
   },
 
   devServer: {
+    hot: true,
+    inline: true,
+    stats: {colors: true},
     contentBase: path.resolve('./dist'),
     historyApiFallback: true
   },

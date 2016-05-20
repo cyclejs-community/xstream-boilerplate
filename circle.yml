@@ -9,7 +9,7 @@ test:
         background: true
     - sleep 5
   override:
-    - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm test-ci
+    - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run test-ci
 
 dependencies:
   post:

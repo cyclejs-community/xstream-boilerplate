@@ -40,3 +40,5 @@ tests_output
 ${CIRCLE_ARTIFACTS}
 .local
 *.local.*
+CBT_READY
+CBT_KILL

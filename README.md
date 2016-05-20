@@ -1,4 +1,5 @@
-# Cycle.js Diversity Boilerplate [![Coverage Status](https://coveralls.io/repos/github/TylorS/xstream-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/TylorS/xstream-boilerplate?branch=master)
+# Cycle.js Diversity Boilerplate
+[![Coverage Status](https://coveralls.io/repos/github/TylorS/xstream-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/TylorS/xstream-boilerplate?branch=master)
 
 ## Get it!
 

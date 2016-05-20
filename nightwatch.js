@@ -6,7 +6,7 @@ const makeCBTTest = OSName => (apiName, browserName) =>
   ({
     'selenium_host': 'hub.crossbrowsertesting.com',
     'selenium_port': '80',
-    'output_folder': '${CIRCLE_TEST_REPORTS}',
+    'output_folder': '${CIRCLE_ARTIFACTS}',
 
     desiredCapabilities: {
       'name': `${OSName}~${apiName}~${browserName}`,
@@ -76,6 +76,7 @@ module.exports = {
     'WIN7-IE11': makeCBTTest('Win7x64-BASE')('IE11', 'internet explorer'),
     'WIN8-IE11': makeWin8('IE11', 'internet explorer'),
     'WIN10-IE11': makeWin10('IE11', 'internet explorer'),
+    'WIN10-Chrome49': makeWin10('Chrome49x64', 'chrome'),
     'MAC9': makeMac('9', 'Safari7'),
     'MAC10': makeMac('10', 'Safari8'),
     'MAC11': makeMac('11', 'Safari9'),

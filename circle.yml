@@ -5,11 +5,11 @@ machine:
 test:
   pre:
     - BUILD_ENV=production npm run build
-    - npm run serve-static:
+    - npm run tunnels:
         background: true
-    - sleep 3
+    - sleep 5
   override:
-    - MOCHA_FILE=$CIRCLE_TEST_REPORTS/test-results.xml npm test-ci
+    - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm test-ci
 
 dependencies:
   post:
@@ -20,6 +20,7 @@ dependencies:
 
 general:
   artifacts:
+    - ./${CIRCLE_ARTIFACTS}
     - ./coverage
     - ./tests_output
     - ./test-results.xml

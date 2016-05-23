@@ -36,6 +36,7 @@ report
 .tmp
 test-results.xml
 dist/bundle.js
+dist/bundle.js.map
 tests_output
 screens
 ${CIRCLE_ARTIFACTS}

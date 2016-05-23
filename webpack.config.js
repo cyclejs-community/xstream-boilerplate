@@ -70,8 +70,18 @@ const ImageLoader = {
   ]
 }
 
+const environmentOptions =
+  process.env.BUILD_ENV === 'production'
+  ? { }
+  : {
+    debug: true,
+    devtool: 'source-map'
+  }
+
 module.exports = {
   plugins,
+
+  ...environmentOptions,
 
   entry: [
     'webpack-dev-server/client?http://localhost:8080',

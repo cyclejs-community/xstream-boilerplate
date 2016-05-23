@@ -29,8 +29,8 @@
     "test": "npm run lint && npm run unit-test && npm run e2e-test",
     "test-ci": "npm run lint && npm run coverage && npm run cbt",
     "serve-static": "pushstate-server dist/ 8080 /200.html",
-    "serve": "cross-env BABEL_ENV=development webpack-dev-server",
-    "build": "cross-env BABEL_ENV=production webpack"
+    "serve": "cross-env BABEL_ENV=development babel-node ./node_modules/.bin/webpack-dev-server",
+    "build": "cross-env BABEL_ENV=production babel-node ./node_modules/.bin/webpack"
   },
   "config": {
     "commitizen": {
@@ -44,7 +44,6 @@
     "@cycle/dom": "^10.0.0-rc21",
     "@cycle/isolate": "^1.2.1",
     "@cycle/xstream-run": "^1.1.0",
-    "cbt_tunnels": "0.0.24",
     "cyclic-router": "^2.0.0",
     "es6-shim": "^0.35.1",
     "normalize-css": "^2.3.1",

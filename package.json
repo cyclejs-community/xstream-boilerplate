@@ -79,7 +79,7 @@
     "ghooks": "^1.2.1",
     "image-webpack-loader": "^1.8.0",
     "isparta": "^4.0.0",
-    "mocha": "^2.4.5",
+    "mocha": "^2.5.0",
     "mocha-circleci-reporter": "0.0.1",
     "nightwatch": "^0.8.18",
     "node-sass": "^3.7.0",

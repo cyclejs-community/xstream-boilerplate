@@ -7,8 +7,8 @@
         ["cycle-hmr/xstream", {
           "include": [
             "**/src/component/**",
-            "**/src/page/**"            
-          ]          
+            "**/src/page/**"
+          ]
         }]
       ]
     },

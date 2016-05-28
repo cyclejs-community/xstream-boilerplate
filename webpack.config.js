@@ -9,20 +9,24 @@ const imagePath = path.resolve('./dist/images')
 const basePlugins =
   [
     new webpack.EnvironmentPlugin([ 'BUILD_ENV' ]),
-    new webpack.NoErrorsPlugin(), // use it
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('styles.css', { allChunks: true }),
-    new BrowserSyncPlugin(
-      {
-        host: 'localhost',
-        port: 3100,
-        proxy: 'http://localhost:8080/'
-      },
-      {
-        reload: false
-      }
-    )
+    new webpack.NoErrorsPlugin(),    
+    new ExtractTextPlugin('styles.css', { allChunks: true })
   ]
+
+const browserSync = [
+  new BrowserSyncPlugin({
+    host: 'localhost',
+    port: 3100,
+    proxy: 'http://localhost:8080/'
+  }, {
+    reload: false
+  })
+]
+  
+const devPlugins = [
+  new webpack.HotModuleReplacementPlugin(),
+  ...browserSync
+]  
 
 const prodPlugins =
   [
@@ -31,7 +35,7 @@ const prodPlugins =
 
 const plugins = process.env.BUILD_ENV === 'production'
   ? basePlugins.concat(prodPlugins)
-  : basePlugins
+  : basePlugins.concat(devPlugins)
 
 const JSLoader = {
   test: /\.js$/,
@@ -75,7 +79,7 @@ const environmentOptions =
   ? { }
   : {
     debug: true,
-    devtool: 'source-map'
+    devtool: 'eval'
   }
 
 module.exports = {
@@ -97,7 +101,7 @@ module.exports = {
 
   devServer: {
     hot: true,
-    inline: true,
+    //inline: true,
     stats: {colors: true},
     contentBase: path.resolve('./dist'),
     historyApiFallback: true

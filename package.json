@@ -64,7 +64,7 @@
     "browser-sync-webpack-plugin": "^1.0.1",
     "cbt_tunnels": "0.0.24",
     "chromedriver": "^2.21.2",
-    "commitizen": "^2.8.1",
+    "commitizen": "^2.8.2",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "coveralls": "^2.11.9",

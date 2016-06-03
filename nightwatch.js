@@ -75,6 +75,11 @@ module.exports = {
       'output_folder': '${CIRCLE_TEST_REPORTS}',
       'screenshots': {
         'path': '${CIRCLE_ARTIFACTS}'
+      },
+      desiredCapabilities: {
+        browserName: 'firefox',
+        javascriptEnabled: true,
+        acceptSslCerts: true
       }
     },
 

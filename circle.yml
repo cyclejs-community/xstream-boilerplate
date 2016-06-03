@@ -12,8 +12,8 @@ test:
     - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run lint && npm run coverage && npm run e2e-test -- --env circleci
 
 dependencies:
-  post:
-    - sudo apt-get update && sudo apt-get install --only-upgrade google-chrome-stable
+    override:
+      - sudo apt-get update && sudo apt-get install libpango1.0-0 && sudo apt-get install firefox
 
 general:
   artifacts:

@@ -6,7 +6,6 @@ const makeCBTTest = OSName => (apiName, browserName) =>
   ({
     'selenium_host': 'hub.crossbrowsertesting.com',
     'selenium_port': '80',
-    'output_folder': '${CIRCLE_ARTIFACTS}',
 
     desiredCapabilities: {
       'name': `${OSName}~${apiName}~${browserName}`,
@@ -71,11 +70,7 @@ module.exports = {
       }
     },
 
-    'circleci': {
-      'output_folder': '${CIRCLE_TEST_REPORTS}',
-      'screenshots': {
-        'path': '${CIRCLE_ARTIFACTS}'
-      },
+    'travis': {
       desiredCapabilities: {
         browserName: 'firefox',
         javascriptEnabled: true,

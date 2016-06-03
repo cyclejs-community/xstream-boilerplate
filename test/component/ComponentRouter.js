@@ -62,8 +62,6 @@ describe('ComponentRouter', () => {
 
     const DOM = pluck('DOM')
 
-    assert(typeof DOM.addListener === 'function')
-
     // Test Loading page
     DOM.take(1).addListener({
       next: vNode => {

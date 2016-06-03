@@ -7,7 +7,7 @@ test:
     - BUILD_ENV=production npm run build
     - npm run serve-static:
         background: true
-    - sleep 3
+    - sleep 10
   override:
     - MOCHA_FILE=./${CIRCLE_ARTIFACTS}/test-results.xml npm run lint && npm run coverage && npm run e2e-test -- --env circleci
 

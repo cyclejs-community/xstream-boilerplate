@@ -45,10 +45,7 @@ module.exports = {
   },
 
   'test_runner': {
-    'type': 'mocha',
-    'options': {
-      'reporter': 'mocha-circleci-reporter'
-    }
+    'type': 'mocha'
   },
 
   'test_settings': {

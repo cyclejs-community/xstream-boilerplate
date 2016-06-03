@@ -9,7 +9,7 @@ addons:
 env:
   - CXX=g++-4.8
 node_js:
-  - 5
+  - 6
 before_script:
   - npm run build
   - "export DISPLAY=:99.0"

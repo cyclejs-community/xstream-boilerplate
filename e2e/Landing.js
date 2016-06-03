@@ -8,8 +8,8 @@ describe('Landing page', () => {
   it('should show a welcoming', (browser) => {
     browser
       .url(URL)
-      .waitForElementVisible('body', 5000)
-      .pause(3000)
+      .waitForElementVisible('body', 2000)
+      .pause(100)
       .assert.containsText('.welcome', 'Cycle.js Diversity XStream Boilerplate')
   })
 

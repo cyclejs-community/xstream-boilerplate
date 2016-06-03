@@ -2,7 +2,7 @@ language: node_js
 addons:
   firefox: "latest"
 node_js:
-  - 6
+  - 5
 before_script:
   - npm run build
   - "export DISPLAY=:99.0"

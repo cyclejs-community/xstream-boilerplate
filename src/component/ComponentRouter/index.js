@@ -1,9 +1,9 @@
 import dropRepeats from 'xstream/extra/dropRepeats'
 import isolate from '@cycle/isolate'
 import {div} from '@cycle/dom'
-import {eqProps, prop} from 'ramda'
+import {eqProps} from 'ramda'
 
-import {requireSources} from 'util/index'
+import {requireSources, mergeFlatten} from 'util/index'
 
 const equalPaths = eqProps('path')
 const loading = div('.loading', 'Loading...')
@@ -23,11 +23,12 @@ function ComponentRouter (sources) {
     .map(routes => sources.router.define(routes)).flatten()
     .compose(dropRepeats(equalPaths)) // dont render the same page twice in a row
     .map(callComponent(sources))
+    .remember()
 
   return {
-    pluck: key => component$.map(prop(key)).flatten(),
-    DOM: component$.map(prop('DOM')).flatten(),
-    route$: component$.map(prop('route$')).flatten()
+    pluck: key => mergeFlatten(key, [component$]),
+    DOM: mergeFlatten('DOM', [component$]),
+    route$: mergeFlatten('route$', [component$])
   }
 }
 

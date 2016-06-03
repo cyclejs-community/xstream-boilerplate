@@ -8,9 +8,14 @@ describe('Landing page', () => {
   it('should show a welcoming', (browser) => {
     browser
       .url(URL)
-      .waitForElementVisible('body', 3000)
-      .pause(2000)
+      .waitForElementVisible('body', 2000)
+      .pause(100)
       .assert.containsText('.welcome', 'Cycle.js Diversity XStream Boilerplate')
+  })
+
+  it('should route to the Login page after 3 seconds', (browser) => {
+    browser.pause(4000)
+      .assert.containsText('.login', 'Login page')
       .end()
   })
 })

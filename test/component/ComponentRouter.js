@@ -15,6 +15,7 @@ const match = {path: '/', value: () => component}
 const router = {
   path: () => xs.empty(),
   define: () => xs.of(match)
+    .startWith({path: '/login', value: () => component})
 }
 const routes$ = xs.of({
   '/': component
@@ -43,7 +44,7 @@ describe('ComponentRouter', () => {
     })
 
     // Test Component
-    DOM.drop(1).addListener({
+    DOM.drop(1).take(1).addListener({
       next: vNode => {
         assert(vNode.sel === 'h1')
         assert(vNode.text === 'Hello World')

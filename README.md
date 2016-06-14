@@ -29,8 +29,7 @@ $ npm install
 - Babel
 - Mocha + power-assert - unit testing
 - Nightwatch + Mocha - integration testing
-- [Cross Browser Testing](https://crossbrowsertesting.com)
-- CircleCI - continuous integration
+- Travis CI - continuous integration
 - Isparta - code coverage
 - ESLint + eslint-config-standard - code linting
 - ghooks + validate-commit-msg + commitizen  - enforce good commit messages <3

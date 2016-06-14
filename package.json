@@ -23,11 +23,9 @@
     "lint": "eslint src/*.js",
     "unit-test": "cross-env NODE_PATH=./src BABEL_ENV=development mocha -r babel-register",
     "e2e-test": "nightwatch",
-    "tunnels": "cbt_tunnels --username $CBT_USERNAME --authkey $CBT_PASSWORD --dir dist/ --port 4444 --ready ./CBT_READY --kill ./CBT_KILL && echo 'Closed tunnels'",
-    "cbt": "wait-on ./CBT_READY && cross-env E2E='CBT' nightwatch -e WIN7-IE10,MAC9,Android42,iPhone5s,WIN10-Chrome49 && touch CBT_KILL",
-    "coverage": "cross-env NODE_PATH=./src babel-node ./node_modules/.bin/isparta cover _mocha --report lcovonly test/index.js -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "coverage": "cross-env NODE_PATH=./src babel-node ./node_modules/.bin/isparta cover _mocha --report lcovonly test/index.js -- -R spec",
+    "coverage:report": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test": "npm run lint && npm run unit-test && npm run e2e-test",
-    "test-ci": "npm run lint && npm run coverage && npm run cbt",
     "serve-static": "pushstate-server dist/ 8080 /200.html",
     "serve": "cross-env BABEL_ENV=development babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server",
     "build": "cross-env BABEL_ENV=production babel-node ./node_modules/webpack/bin/webpack"
@@ -41,14 +39,14 @@
     }
   },
   "dependencies": {
-    "@cycle/dom": "^10.0.0-rc21",
-    "@cycle/isolate": "^1.2.1",
-    "@cycle/xstream-run": "^1.1.0",
+    "@cycle/dom": "10.0.0-rc28",
+    "@cycle/isolate": "^1.3.2",
+    "@cycle/xstream-run": "^2.0.0",
     "cyclic-router": "^2.0.0",
     "es6-shim": "^0.35.1",
     "normalize-css": "^2.3.1",
     "ramda": "^0.21.0",
-    "xstream": "^3.0.0"
+    "xstream": "^4.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -61,8 +59,7 @@
     "babel-register": "^6.9.0",
     "babel-register-cli": "^2.0.1",
     "browser-sync": "^2.12.8",
-    "browser-sync-webpack-plugin": "^1.0.1",
-    "cbt_tunnels": "0.0.24",
+    "browser-sync-webpack-plugin": "1.0.1",
     "chromedriver": "^2.21.2",
     "commitizen": "^2.8.1",
     "conventional-changelog": "^1.1.0",
@@ -80,7 +77,6 @@
     "image-webpack-loader": "^1.8.0",
     "isparta": "^4.0.0",
     "mocha": "^2.5.0",
-    "mocha-circleci-reporter": "0.0.1",
     "nightwatch": "^0.9.0",
     "node-sass": "^3.7.0",
     "nodemon": "^1.9.2",
@@ -91,7 +87,6 @@
     "style-loader": "^0.13.1",
     "surge": "^0.18.0",
     "validate-commit-msg": "^2.6.1",
-    "wait-on": "^1.5.2",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }

@@ -64,7 +64,7 @@
     "commitizen": "^2.8.1",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
-    "coveralls": "^2.11.9",
+    "coveralls": "^2.11.10",
     "cross-env": "^1.0.7",
     "eslint": "^2.10.2",
     "eslint-config-standard": "^5.3.1",

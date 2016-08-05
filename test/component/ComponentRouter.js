@@ -1,12 +1,13 @@
 import {describe, it} from 'mocha'
 import assert from 'power-assert'
 import xs from 'xstream'
+import xsAdapter from '@cycle/xstream-adapter'
 import {mockDOMSource, h1} from '@cycle/dom'
 
 import ComponentRouter from 'component/ComponentRouter'
 
 // mocks
-const DOMSource = mockDOMSource({})
+const DOMSource = mockDOMSource(xsAdapter, {})
 const component = {
   DOM: xs.of(h1({}, 'Hello World')),
   route$: xs.of('/path')
@@ -36,7 +37,7 @@ describe('ComponentRouter', () => {
     // Test Loading page
     DOM.take(1).addListener({
       next: vNode => {
-        assert(vNode.sel === 'div.loading')
+        assert(vNode.sel === 'div.loading.___cycle2')
         assert(vNode.text === 'Loading...')
       },
       error: done,
@@ -46,7 +47,7 @@ describe('ComponentRouter', () => {
     // Test Component
     DOM.drop(1).take(1).addListener({
       next: vNode => {
-        assert(vNode.sel === 'h1')
+        assert(vNode.sel === 'h1.___cycle2')
         assert(vNode.text === 'Hello World')
       },
       error: done,
@@ -67,7 +68,7 @@ describe('ComponentRouter', () => {
     // Test Loading page
     DOM.take(1).addListener({
       next: vNode => {
-        assert(vNode.sel === 'div.loading')
+        assert(vNode.sel === 'div.loading.___cycle2')
         assert(vNode.text === 'Loading...')
       },
       error: done,
@@ -77,7 +78,7 @@ describe('ComponentRouter', () => {
     // Test Component
     DOM.drop(1).take(1).addListener({
       next: vNode => {
-        assert(vNode.sel === 'h1')
+        assert(vNode.sel === 'h1.___cycle2')
         assert(vNode.text === 'Hello World')
       },
       error: done,

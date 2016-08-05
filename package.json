@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
-    "babel-core": "^6.11.4",
+    "babel-core": "^6.13.1",
     "babel-loader": "^6.2.4",
     "cycle-hmr": "^0.3.1",
     "babel-plugin-espower": "^2.1.2",

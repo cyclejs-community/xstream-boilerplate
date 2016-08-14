@@ -82,7 +82,7 @@
     "nodemon": "^1.9.2",
     "postcss-loader": "^0.10.0",
     "power-assert": "^1.4.1",
-    "pushstate-server": "^1.8.1",
+    "pushstate-server": "^1.10.0",
     "selenium-server": "^2.53.0",
     "style-loader": "^0.13.1",
     "surge": "^0.18.0",

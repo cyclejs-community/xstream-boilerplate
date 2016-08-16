@@ -86,7 +86,7 @@
     "selenium-server": "^2.53.0",
     "style-loader": "^0.13.1",
     "surge": "^0.18.0",
-    "validate-commit-msg": "^2.6.1",
+    "validate-commit-msg": "^2.7.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }

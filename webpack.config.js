@@ -9,7 +9,7 @@ const imagePath = path.resolve('./dist/images')
 const basePlugins =
   [
     new webpack.EnvironmentPlugin([ 'BUILD_ENV' ]),
-    new webpack.NoErrorsPlugin(),    
+    new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin('styles.css', { allChunks: true })
   ]
 
@@ -22,11 +22,11 @@ const browserSync = [
     reload: false
   })
 ]
-  
+
 const devPlugins = [
   new webpack.HotModuleReplacementPlugin(),
   ...browserSync
-]  
+]
 
 const prodPlugins =
   [
@@ -82,16 +82,24 @@ const environmentOptions =
     devtool: 'eval'
   }
 
+const devEntry = [
+  'webpack-dev-server/client?http://localhost:8080',
+  'webpack/hot/only-dev-server',
+]
+
+const defaultEntry = [path.join(srcPath, 'app.js')]
+
+const entry =
+  process.env.BUILD_ENV === 'production'
+  ? defaultEntry
+  : devEntry.concat(defaultEntry)
+
 module.exports = {
   plugins,
 
   ...environmentOptions,
 
-  entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    path.join(srcPath, 'app.js')
-  ],
+  entry,
 
   output: {
     path: path.resolve('./dist'),

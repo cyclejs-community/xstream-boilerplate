@@ -28,7 +28,7 @@
     "test": "npm run lint && npm run unit-test && npm run e2e-test",
     "serve-static": "pushstate-server dist/ 8080 /200.html",
     "serve": "cross-env BABEL_ENV=development babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server",
-    "build": "cross-env BABEL_ENV=production babel-node ./node_modules/webpack/bin/webpack"
+    "build": "cross-env BABEL_ENV=production BUILD_ENV=production babel-node ./node_modules/webpack/bin/webpack"
   },
   "config": {
     "commitizen": {

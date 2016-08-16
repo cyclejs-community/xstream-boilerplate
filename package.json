@@ -46,7 +46,7 @@
     "es6-shim": "^0.35.1",
     "normalize-css": "^2.3.1",
     "ramda": "^0.22.0",
-    "xstream": "^5.3.2"
+    "xstream": "^5.3.4"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",

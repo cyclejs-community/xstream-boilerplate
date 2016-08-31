@@ -58,7 +58,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.14.0",
     "babel-register-cli": "^2.0.1",
-    "browser-sync": "^2.14.0",
+    "browser-sync": "^2.14.3",
     "browser-sync-webpack-plugin": "1.1.2",
     "chromedriver": "^2.23.1",
     "commitizen": "^2.8.6",

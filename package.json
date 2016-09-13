@@ -61,7 +61,7 @@
     "babel-register-cli": "^2.0.1",
     "browser-sync": "^2.15.0",
     "browser-sync-webpack-plugin": "1.1.2",
-    "chromedriver": "^2.23.1",
+    "chromedriver": "^2.24.0",
     "commitizen": "^2.8.6",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",

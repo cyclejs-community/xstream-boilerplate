@@ -36,26 +36,24 @@ describe('ComponentRouter', function () {
 
     assert(typeof DOM.addListener === 'function')
 
+    const expected = [
+      { sel: 'div.loading.___cycle2', text: 'Loading...' },
+      { sel: 'h1.___cycle2', 'text': 'Hello World' }
+    ]
+
     // Test Loading page
-    DOM.take(1).addListener({
+    DOM.take(2).addListener({
       next: vNode => {
-        assert(vNode.sel === 'div.loading.___cycle2')
-        assert(vNode.text === 'Loading...')
+        const x = expected.shift()
+        assert(vNode.sel === x.sel)
+        assert(vNode.text === x.text)
+        if (expected.length === 0) {
+          done()
+        }
       },
       error: done,
-      complete: () => {}
+      complete: Function.prototype
     })
-
-    // Test Component
-    DOM.drop(1).take(1).addListener({
-      next: vNode => {
-        assert(vNode.sel === 'h1.___cycle2')
-        assert(vNode.text === 'Hello World')
-      },
-      error: done,
-      complete: () => done()
-    })
-
   })
 
   it('should return a pluck function to retrieve sinks', function (done) {
@@ -69,24 +67,23 @@ describe('ComponentRouter', function () {
 
     assert(typeof DOM.addListener === 'function')
 
-    // Test Loading page
-    DOM.take(1).addListener({
-      next: vNode => {
-        assert(vNode.sel === 'div.loading.___cycle2')
-        assert(vNode.text === 'Loading...')
-      },
-      error: done,
-      complete: () => {}
-    })
+    const expected = [
+      { sel: 'div.loading.___cycle2', text: 'Loading...' },
+      { sel: 'h1.___cycle2', 'text': 'Hello World' }
+    ]
 
-    // Test Component
-    DOM.drop(1).take(1).addListener({
+    // Test Loading page
+    DOM.take(2).addListener({
       next: vNode => {
-        assert(vNode.sel === 'h1.___cycle2')
-        assert(vNode.text === 'Hello World')
+        const x = expected.shift()
+        assert(vNode.sel === x.sel)
+        assert(vNode.text === x.text)
+        if (expected.length === 0) {
+          done()
+        }
       },
       error: done,
-      complete: () => done()
+      complete: Function.prototype
     })
   })
 })

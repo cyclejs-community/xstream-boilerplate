@@ -22,14 +22,16 @@ const routes$ = xs.of({
   '/': component
 })
 
-describe('ComponentRouter', () => {
+describe('ComponentRouter', function () {
   it('should throw if not given a routes$', () => {
     assert.throws(() => {
       ComponentRouter()
     }, Error, /ComponentRouter must have routes\$/)
   })
 
-  it('should return the latest components sinks', (done) => {
+  it('should return the latest components sinks', function (done) {
+    this.timeout = 5000
+
     const {DOM} = ComponentRouter({DOM: DOMSource, routes$, router})
 
     assert(typeof DOM.addListener === 'function')
@@ -56,7 +58,9 @@ describe('ComponentRouter', () => {
 
   })
 
-  it('should return a pluck function to retrieve sinks', (done) => {
+  it('should return a pluck function to retrieve sinks', function (done) {
+    this.timeout = 5000
+
     const {pluck} = ComponentRouter({DOM: DOMSource, routes$, router})
 
     assert(typeof pluck === 'function')

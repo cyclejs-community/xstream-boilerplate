@@ -30,8 +30,6 @@ describe('ComponentRouter', function () {
   })
 
   it('should return the latest components sinks', function (done) {
-    this.timeout = 5000
-
     const {DOM} = ComponentRouter({DOM: DOMSource, routes$, router})
 
     assert(typeof DOM.addListener === 'function')
@@ -57,8 +55,6 @@ describe('ComponentRouter', function () {
   })
 
   it('should return a pluck function to retrieve sinks', function (done) {
-    this.timeout = 5000
-
     const {pluck} = ComponentRouter({DOM: DOMSource, routes$, router})
 
     assert(typeof pluck === 'function')

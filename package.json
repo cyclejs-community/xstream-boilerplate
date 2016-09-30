@@ -50,7 +50,7 @@
     "xstream": "^6.4.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.14.0",
+    "babel-cli": "^6.16.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "cycle-hmr": "^0.3.1",

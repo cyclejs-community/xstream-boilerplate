@@ -47,7 +47,7 @@
     "normalize-css": "^2.3.1",
     "ramda": "^0.22.1",
     "switch-path": "^1.1.8",
-    "xstream": "^6.4.1"
+    "xstream": "^6.5.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",

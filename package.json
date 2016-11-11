@@ -84,7 +84,7 @@
     "node-sass": "^3.11.2",
     "nodemon": "^1.11.0",
     "postcss-loader": "^1.1.1",
-    "power-assert": "^1.4.1",
+    "power-assert": "^1.4.2",
     "pushstate-server": "^2.1.0",
     "selenium-server": "^2.53.0",
     "style-loader": "^0.13.1",

@@ -83,7 +83,7 @@
     "nightwatch": "^0.9.8",
     "node-sass": "^3.13.0",
     "nodemon": "^1.11.0",
-    "postcss-loader": "^1.1.1",
+    "postcss-loader": "^1.2.1",
     "power-assert": "^1.4.2",
     "pushstate-server": "^2.1.0",
     "selenium-server": "^2.53.0",

@@ -21,10 +21,9 @@
     "commit": "git-cz",
     "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular",
     "lint": "eslint src/*.js",
-    "unit-test": "cross-env NODE_PATH=./src BABEL_ENV=development mocha -r babel-register",
     "coverage": "cross-env NODE_PATH=./src babel-node ./node_modules/.bin/isparta cover _mocha --report lcovonly test/index.js -- -R spec",
     "coverage:report": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "test": "npm run lint && npm run unit-test",
+    "test": "npm run lint && npm run coverage",
     "serve-static": "pushstate-server dist/ 8080 /200.html",
     "serve": "cross-env BABEL_ENV=development babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server",
     "build": "cross-env BABEL_ENV=production BUILD_ENV=production babel-node ./node_modules/webpack/bin/webpack"

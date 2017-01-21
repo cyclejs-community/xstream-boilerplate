@@ -38,7 +38,7 @@
     }
   },
   "dependencies": {
-    "@cycle/dom": "15.0.0-rc.1",
+    "@cycle/dom": "^14.3.0",
     "@cycle/isolate": "^1.3.2",
     "@cycle/xstream-run": "^4.2.0",
     "cyclic-router": "^3.0.1",

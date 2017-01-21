@@ -1,5 +1,4 @@
 language: node_js
-sudo: required
 dist: trusty
 addons:
   firefox: "latest"
@@ -8,13 +7,10 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-      - oracle-java8-installer
 env:
   - CXX=g++-4.8
 node_js:
   - 6
-jdk:
-  - oraclejdk8
 before_script:
   - npm run build
   - "export DISPLAY=:99.0"

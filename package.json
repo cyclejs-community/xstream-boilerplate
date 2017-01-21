@@ -31,9 +31,6 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    },
-    "ghooks": {
-      "commit-msg": "node ./node_modules/validate-commit-msg/index.js"
     }
   },
   "dependencies": {
@@ -73,7 +70,6 @@
     "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
-    "ghooks": "^1.2.1",
     "image-webpack-loader": "^3.0.0",
     "isparta": "^4.0.0",
     "mocha": "^3.2.0",

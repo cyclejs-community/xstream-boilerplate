@@ -31,7 +31,7 @@ $ npm install
 - Travis CI - continuous integration
 - Isparta - code coverage
 - ESLint + eslint-config-standard - code linting
-- ghooks + validate-commit-msg + commitizen  - enforce good commit messages <3
+- husky + validate-commit-msg + commitizen  - enforce good commit messages <3
 - conventional-changelog - Generate a changelog from your nice commit messages
 - Github Issue and Pull Request templates
 - [LGTM](https://lgtm.co) sample MAINTAINERS file

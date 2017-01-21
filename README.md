@@ -28,7 +28,6 @@ $ npm install
 - [XStream](https://github.com/staltz/xstream)
 - Babel
 - Mocha + power-assert - unit testing
-- Nightwatch + Mocha - integration testing
 - Travis CI - continuous integration
 - Isparta - code coverage
 - ESLint + eslint-config-standard - code linting
@@ -36,7 +35,7 @@ $ npm install
 - conventional-changelog - Generate a changelog from your nice commit messages
 - Github Issue and Pull Request templates
 - [LGTM](https://lgtm.co) sample MAINTAINERS file
-- Webpack - bunding
+- Webpack - bundling
 - Hot Module Reloading - using [cycle-hmr](https://whitecolor/cycle-hmr) - Thank you @Cmdv and @whitecolor
 - [BrowserSync](https://browsersync.io/) - Make testing mutliple browsers easy peasy! Thank you @stevenmathews
 - CSS Modules - better CSS
@@ -45,7 +44,7 @@ $ npm install
 
 ## Libraries included by default
 
-- Ramda - functional greatness
+- [Ramda](http://ramdajs.com/) - functional greatness
 - [@cycle/dom](https://github.com/cyclejs/dom)
 - [@cycle/isolate](https://github.com/cyclejs/isolate)
 - [xstream](https://github.com/staltz/xstream)

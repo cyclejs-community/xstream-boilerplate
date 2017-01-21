@@ -86,7 +86,7 @@
     "style-loader": "^0.13.1",
     "surge": "^0.18.0",
     "validate-commit-msg": "^2.8.2",
-    "webpack": "^1.13.3",
+    "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   }
 }

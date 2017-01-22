@@ -37,6 +37,8 @@ report
 test-results.xml
 dist/bundle.js
 dist/bundle.js.map
+dist/styles.css
+dist/styles.css.map
 tests_output
 screens
 ${CIRCLE_ARTIFACTS}

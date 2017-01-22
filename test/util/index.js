@@ -37,7 +37,7 @@ describe('util', () => {
   describe('mergeLatest', () => {
     it('should merge multiple objects of streams together', (done) => {
       const a = {a: xs.of(1)}
-      const b = {a: xs.of(2).compose(delay(100))}
+      const b = {a: xs.of(2).compose(delay(10))}
 
       const expected = [1, 2]
 
@@ -56,7 +56,7 @@ describe('util', () => {
 
     it('should merge a mix of streams and objects together', (done) => {
       const a = xs.of({a: xs.of(1)})
-      const b = {a: xs.of(2).compose(delay(100))}
+      const b = {a: xs.of(2).compose(delay(10))}
 
       const expected = [1, 2]
 

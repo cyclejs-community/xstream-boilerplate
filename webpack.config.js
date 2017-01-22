@@ -9,8 +9,8 @@ const imagePath = path.resolve('./dist/images')
 const basePlugins =
   [
     new webpack.EnvironmentPlugin([ 'BUILD_ENV' ]),
-    new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('styles.css', { allChunks: true })
+    new webpack.NoEmitOnErrorsPlugin(),
+    new ExtractTextPlugin({ filename: 'styles.css', disable: false, allChunks: true })
   ]
 
 const browserSync = [
@@ -24,6 +24,9 @@ const browserSync = [
 ]
 
 const devPlugins = [
+  new webpack.LoaderOptionsPlugin({
+    debug: true
+  }),
   new webpack.HotModuleReplacementPlugin(),
   ...browserSync
 ]
@@ -39,9 +42,13 @@ const plugins = process.env.BUILD_ENV === 'production'
 
 const JSLoader = {
   test: /\.js$/,
-  loaders: [
-    'babel-loader',
-    'eslint'
+  use: [
+    {
+      loader: 'babel-loader'
+    },
+    {
+      loader: 'eslint-loader'
+    }
   ],
   include: __dirname,
   exclude: /node_modules/
@@ -49,21 +56,17 @@ const JSLoader = {
 
 const SASSLoader = {
   test: /\.scss$/,
-  loader: ExtractTextPlugin.extract(
-    'style-loader',
-    'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' +
-    '!postcss-loader' +
-    '!sass-loader?outputStyle=expanded'
-  )
+  loader: ExtractTextPlugin.extract({
+    loader: 'css-loader!sass-loader'
+  })
 }
 
 const CSSLoader = {
   test: /\.css$/,
-  loader: ExtractTextPlugin.extract(
-    'style-loader',
-    'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' +
-    '!postcss-loader'
-  )
+  loader: ExtractTextPlugin.extract({
+    fallbackLoader: 'style-loader',
+    loader: 'css-loader'
+  })
 }
 
 const ImageLoader = {
@@ -77,14 +80,11 @@ const ImageLoader = {
 const environmentOptions =
   process.env.BUILD_ENV === 'production'
   ? { }
-  : {
-    debug: true,
-    devtool: 'eval'
-  }
+  : { devtool: 'eval' }
 
 const devEntry = [
   'webpack-dev-server/client?http://localhost:8080',
-  'webpack/hot/only-dev-server',
+  'webpack/hot/only-dev-server'
 ]
 
 const defaultEntry = [path.join(srcPath, 'app.js')]
@@ -109,14 +109,13 @@ module.exports = {
 
   devServer: {
     hot: true,
-    //inline: true,
     stats: {colors: true},
     contentBase: path.resolve('./dist'),
     historyApiFallback: true
   },
 
   module: {
-    loaders: [
+    rules: [
       JSLoader,
       SASSLoader,
       CSSLoader,

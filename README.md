@@ -35,11 +35,9 @@ $ npm install
 - conventional-changelog - Generate a changelog from your nice commit messages
 - Github Issue and Pull Request templates
 - [LGTM](https://lgtm.co) sample MAINTAINERS file
-- Webpack - bundling
+- Webpack 2 - bundling
 - Hot Module Reloading - using [cycle-hmr](https://whitecolor/cycle-hmr) - Thank you @Cmdv and @whitecolor
 - [BrowserSync](https://browsersync.io/) - Make testing mutliple browsers easy peasy! Thank you @stevenmathews
-- CSS Modules - better CSS
-- SASS/SCSS + Modules - betterer CSS
 - Script for making better Github issue labels
 
 ## Libraries included by default
@@ -52,7 +50,8 @@ $ npm install
 
 #### TODO
 
-- Update to Webpack 2 for tree-shaking
+- CSS Modules - better CSS
+- SASS/SCSS + Modules - betterer CSS
 - Better Documentation, more links, etc
 - add markdown-doc-test
 - More everything :)

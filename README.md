@@ -1,3 +1,9 @@
+# DEPRECATED
+
+In favour of [create-cycle-app](https://github.com/cyclejs-community/create-cycle-app) this repo is no longer maintained.
+
+-----
+
 # Cycle.js Diversity Boilerplate
 [![Coverage Status](https://coveralls.io/repos/github/TylorS/xstream-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/TylorS/xstream-boilerplate?branch=master)
 [![CircleCI](https://img.shields.io/circleci/project/TylorS/xstream-boilerplate.svg?maxAge=2592000)]()
